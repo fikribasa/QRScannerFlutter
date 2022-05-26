@@ -23,18 +23,25 @@ class LandingScreen extends StatelessWidget {
             Column(
               children: [
                 ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      // Foreground color
+                      onPrimary:
+                          Theme.of(context).colorScheme.onSecondaryContainer,
+                      // Background color
+                      primary: Theme.of(context).colorScheme.secondaryContainer,
+                    ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                     onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const QRScreen())),
                     child: const Text("Scan QR from Camera")),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                    onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const QRScreen())),
-                    child: const Text("Scan QR from Gallery")),
+                const SizedBox(height: 40),
+                // ElevatedButton(
+                //     onPressed: () => Navigator.push(
+                //         context,
+                //         MaterialPageRoute(
+                //             builder: (context) => const QRScreen())),
+                //     child: const Text("Scan QR from Gallery")),
               ],
             ),
           ],

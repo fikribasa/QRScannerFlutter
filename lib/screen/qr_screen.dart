@@ -31,7 +31,7 @@ class QRScreen extends StatelessWidget {
                   final Uri? code = Uri.parse(barcode.rawValue!);
                   debugPrint('Barcode found! $code');
                   if (!await launchUrl(code!,
-                      mode: LaunchMode.platformDefault)) {
+                      mode: LaunchMode.externalApplication)) {
                     throw 'Could not launch $code';
                   }
                 }),

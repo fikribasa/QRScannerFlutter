@@ -37,6 +37,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = MainTheme.light();
     return MaterialApp(
-        theme: theme, title: 'QR Simple Scanner', home: const LandingScreen());
+        debugShowCheckedModeBanner: false,
+        theme: theme,
+        title: 'QR Simple Scanner',
+        home: const LandingScreen());
   }
 }

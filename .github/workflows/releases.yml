@@ -7,7 +7,7 @@ on:
   push:
   # Triggers the workflow on push or pull request events but only for the tagged
     tags:
-    - '*'
+    - 'v*.*'
   
   # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,7 +31,7 @@ jobs:
       - run: flutter analyze
       - run: flutter test
       - run: flutter build apk --release
-      - uses: ncipollo/release-action@v2
+      - uses: ncipollo/release-action@v1
         with:
          artifacts: "build/app/outputs/flutter-apk/app-arm64-v8a-release.apk"
          token: $

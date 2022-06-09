@@ -10,5 +10,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "💡 The $ repository has been cloned to the runner."
+      - uses: actions/setup-java@v1
+        with:
+          java-version: $
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: $
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
       - run: echo "🍏 This job's status is $."
